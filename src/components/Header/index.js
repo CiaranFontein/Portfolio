@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Parallax } from "react-scroll-parallax";
+import "./style.css";
 
 const Corner = styled.div`
   position: fixed;
