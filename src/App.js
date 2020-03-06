@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Header, Body, Footer } from "./components";
-import { theme } from "./styles/";
-const { flexCenter } = theme;
+import { flexCenter } from "./styles";
+
 const StyledApp = styled.div`
   ${flexCenter}
 `;
