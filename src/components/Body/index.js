@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import styled from "styled-components";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
@@ -25,51 +26,7 @@ const Body = () => {
   );
   return (
     <StyledBody posFromTop={scrollPos}>
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
-      The Body The Body The Body The Body The Body The Body The Body The Body
+      Hello
     </StyledBody>
   );
 };

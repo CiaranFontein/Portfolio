@@ -1,7 +1,8 @@
+import "./style.css";
+
+import { Parallax } from "react-scroll-parallax";
 import React from "react";
 import styled from "styled-components";
-import { Parallax } from "react-scroll-parallax";
-import "./style.css";
 
 const Corner = styled.div`
   position: fixed;
@@ -24,7 +25,8 @@ const Header = () => {
     <Corner>
       <Parallax y={[-2000, 2000]}>
         <Container>
-          <h1>Ciaran Fontein</h1>
+          <h1>Ciaran</h1>
+          <h1 className='shadow'>Fontein</h1>
         </Container>
       </Parallax>
     </Corner>
