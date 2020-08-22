@@ -1,18 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
-const Corner = styled.div`
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-bottom: 50vh solid red;
-  border-left: 50vw solid transparent;
+const StyledFooter = styled.div`
+position: fixed;
+height:200px;
+width: 86%;
+bottom: 0;
+font-size: 36px;
+flex: none;
 `;
 
 const Footer = () => {
-  return <Corner>The Footer</Corner>;
+  return <StyledFooter></StyledFooter>;
 };
 
 export default Footer;

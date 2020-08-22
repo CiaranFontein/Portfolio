@@ -4,14 +4,10 @@
   "private": true,
   "homepage": "https://ciaranfontein.com/",
   "dependencies": {
-    "@n8tb1t/use-scroll-position": "^1.0.43",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
+    "@react-hook/mouse-position": "^4.1.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0",
-    "react-scroll-parallax": "^2.3.1",
     "styled-components": "^5.0.1"
   },
   "scripts": {

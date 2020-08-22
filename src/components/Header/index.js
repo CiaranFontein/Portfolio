@@ -1,35 +1,45 @@
-import "./style.css";
-
-import { Parallax } from "react-scroll-parallax";
 import React from "react";
 import styled from "styled-components";
-
-const Corner = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-top: 50vh solid red;
-  border-right: 50vw solid transparent;
-`;
+import textBackground from "../../assets/textBackground.gif";
 
 const Container = styled.div`
-  position: absolute;
-  top: -50vh;
-  font-size: 92px;
+display:flex;
+flex-direction:column;
+height:200px;
+width:100%;
+`;
+
+const FancyText = styled.div`
+position: absolute;
+background-image: url(${textBackground});
+	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 120px;
+  font-weight:bold;
+  object-fit:contain;
+  opacity: 0.5;
+`;
+
+const FancyTextContainer = styled.div`
+text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+letter-spacing: 50px;
 `;
 
 const Header = () => {
   return (
-    <Corner>
-      <Parallax y={[-2000, 2000]}>
-        <Container>
-          <h1>Ciaran</h1>
-          <h1 className='shadow'>Fontein</h1>
-        </Container>
-      </Parallax>
-    </Corner>
+    <Container>
+      <FancyTextContainer>
+        <FancyText>Ciaran Fontein</FancyText>
+      </FancyTextContainer>
+    </Container>
   );
 };
 
