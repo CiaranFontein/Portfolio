@@ -1,12 +1,20 @@
+import CiaranNoEyesImage from "../../assets/CiaranNoEyes.png";
+import EyeWhites from "../../assets/EyeWhites.png";
+import LeftEyeImage from "../../assets/LeftEye.png";
 import React from "react";
+import RightEyeImage from "../../assets/RightEye.png";
 import styled from "styled-components";
 
-const magnitude = 40;
+const magL = 3;
+const magR = 2.5;
+const magX = 1.55;
+const magY = 1;
 const leftCenter = React.createRef();
 const rightCenter = React.createRef();
 
 const StyledBody = styled.div`
   width: 100%;
+  height:100%;
   overflow-y: scroll;
   display:flex;
   align-items:center;
@@ -14,55 +22,52 @@ const StyledBody = styled.div`
   overflow-y:scroll;
 `;
 
-const EyesContainer = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-width: 86%;
-`;
-
-const Eye = styled.div`
-border-radius:50%;
-height: 200px;
-width: 200px;
-background-color: #FFF;
-margin: 0px 1rem;
-position: relative;
+const CiaranImageContainer = styled.div`
+position: 'relative';
 display:flex;
-justify-content:center;
-align-items:center;
+height:100%;
 `;
 
-const EyeColor = styled.div`
-position: relative;
-height: 5rem;
-  width: 5rem;
-  border-radius: 50%;
-  background-color: blue;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  left: ${({ position }) => position?.x}px;
-  top: ${ ({ position }) => position?.y}px;
+const CiaranCutoutChildren = styled.div`
+position:relative;
+display:flex;
+height: 100%;
 `;
 
-const Pupil = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-height: 2.5rem;
-width: 2.5rem;
-border-radius: 50%;
-background-color: #000;
+const LeftEye = styled.img`
+left: ${({ position }) => position?.x + 322}px;
+  top: ${({ position }) => position?.y + 226}px;
+  height: 24px;
+  width: 24px;
+  position:absolute;
+  z-index: 0;
+  object-fit:contain;
+  
 `;
-
-const CenterPoint = styled.div`
+const RightEye = styled.img`
+left: ${({ position }) => position?.x + 243}px;
+  top: ${({ position }) => position?.y + 232}px;
+z-index:0;
+height:26px;
+width:26px;
 position:absolute;
-top:50%;
-left:50%;
-height: 0;
-width: 0;
+object-fit:contain;
+`;
+
+const LeftCenterPoint = styled.div`
+position:absolute;
+top:235px;
+left:330px;
+height: 1px;
+width: 1px;
+`;
+
+const RightCenterPoint = styled.div`
+position:absolute;
+top:242px;
+left:254px;
+height: 1px;
+width: 1px;
 `;
 
 const Body = ({ mouse }) => {
@@ -72,27 +77,21 @@ const Body = ({ mouse }) => {
   const rightDiff = { x: mouse.x - rightPos.x, y: mouse.y - rightPos.y };
   const leftAngle = Math.atan2(leftDiff.y, leftDiff.x);
   const rightAngle = Math.atan2(rightDiff.y, rightDiff.x);
-  const leftPupilPos = { x: Math.cos(leftAngle) * magnitude, y: Math.sin(leftAngle) * magnitude }
-  const rightPupilPos = { x: Math.cos(rightAngle) * magnitude, y: Math.sin(rightAngle) * magnitude }
+  const leftPupilPos = { x: Math.cos(leftAngle) * magL * magX, y: Math.sin(leftAngle) * magL * magY }
+  const rightPupilPos = { x: Math.cos(rightAngle) * magR * magX, y: Math.sin(rightAngle) * magR * magY }
 
   return (
     <StyledBody posFromTop={0} >
-      <EyesContainer>
-        <Eye>
-          <CenterPoint ref={leftCenter} />
-          <EyeColor position={leftPupilPos}>
-            <Pupil>
-
-            </Pupil>
-          </EyeColor>
-        </Eye>
-        <Eye>
-          <CenterPoint ref={rightCenter} />
-          <EyeColor position={rightPupilPos}>
-            <Pupil></Pupil>
-          </EyeColor>
-        </Eye>
-      </EyesContainer>
+      <CiaranImageContainer>
+        <img alt={'ciaran with following eyes'} src={CiaranNoEyesImage} style={{ zIndex: 1, height: 1000, objectFit: "contain", position: 'absolute' }} />
+        <CiaranCutoutChildren>
+          <img alt={'my sclera'} src={EyeWhites} style={{ zIndex: -1, top: 135, left: 228, height: 210, width: 130, objectFit: "contain", position: 'absolute' }} />
+          <LeftEye alt={'my left cornea'} src={LeftEyeImage} position={leftPupilPos} />
+          <RightEye alt={'my right cornea'} src={RightEyeImage} position={rightPupilPos} />
+          <LeftCenterPoint ref={leftCenter} />
+          <RightCenterPoint ref={rightCenter} />
+        </CiaranCutoutChildren>
+      </CiaranImageContainer>
     </StyledBody>
   );
 };
