@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import textBackground from "../../assets/textBackground.gif";
-
+import textBackground2 from "../../assets/traffic.gif";
 const Container = styled.div`
 display:flex;
 flex-direction:column;
@@ -18,10 +18,21 @@ background-image: url(${textBackground});
   -webkit-background-clip: text;
   background-clip:text;
 	text-transform: uppercase;
-	font-size: 120px;
+	font-size: 180px;
   font-weight:bold;
   object-fit:contain;
   opacity: 0.5;
+  &:after{
+    position:absolute;
+    top:20px;
+    left:20px;
+    object-fit:contain;
+    -moz-background-clip: text;
+  -webkit-background-clip: text;
+  background-clip:text;
+    background-image: url(${textBackground2});
+    content: 'CIARAN FONTEIN'
+  }
 `;
 
 const FancyTextContainer = styled.div`

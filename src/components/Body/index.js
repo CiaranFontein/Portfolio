@@ -5,9 +5,9 @@ import React from "react";
 import RightEyeImage from "../../assets/RightEye.png";
 import styled from "styled-components";
 
-const magL = 3;
-const magR = 2.5;
-const magX = 1.55;
+const magL = 2;
+const magR = 2.8;
+const magX = 1.6;
 const magY = 1;
 const leftCenter = React.createRef();
 const rightCenter = React.createRef();
@@ -15,17 +15,18 @@ const rightCenter = React.createRef();
 const StyledBody = styled.div`
   width: 100%;
   height:100%;
-  overflow-y: scroll;
+  position:absolute;
   display:flex;
   align-items:center;
   justify-content:center;
-  overflow-y:scroll;
+  overflow-y: hidden;
 `;
 
 const CiaranImageContainer = styled.div`
 position: 'relative';
 display:flex;
 height:100%;
+bottom:0px;
 `;
 
 const CiaranCutoutChildren = styled.div`
@@ -35,7 +36,7 @@ height: 100%;
 `;
 
 const LeftEye = styled.img`
-left: ${({ position }) => position?.x + 322}px;
+left: ${({ position }) => position?.x + 320}px;
   top: ${({ position }) => position?.y + 226}px;
   height: 24px;
   width: 24px;
@@ -46,7 +47,7 @@ left: ${({ position }) => position?.x + 322}px;
 `;
 const RightEye = styled.img`
 left: ${({ position }) => position?.x + 243}px;
-  top: ${({ position }) => position?.y + 232}px;
+  top: ${({ position }) => position?.y + 231}px;
 z-index:0;
 height:26px;
 width:26px;
