@@ -10,7 +10,9 @@ width:100%;
 `;
 
 const FancyText = styled.div`
+z-index:-5;
 position: absolute;
+height:100%;
 background-image: url(${textBackground});
 	background-size: cover;
 	color: transparent;
