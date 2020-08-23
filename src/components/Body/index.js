@@ -37,27 +37,30 @@ height: 100%;
 
 const LeftEye = styled.img`
 left: ${({ position }) => position?.x + 320}px;
-  top: ${({ position }) => position?.y + 226}px;
+  top: ${({ position }) => position?.y + 126}px;
   height: 24px;
   width: 24px;
   position:absolute;
   z-index: 0;
   object-fit:contain;
-  
+  transition: top,left 0.2s;
+  transition-delay: 0.5s;
 `;
 const RightEye = styled.img`
 left: ${({ position }) => position?.x + 243}px;
-  top: ${({ position }) => position?.y + 231}px;
+  top: ${({ position }) => position?.y + 131}px;
 z-index:0;
 height:26px;
 width:26px;
 position:absolute;
 object-fit:contain;
+transition: top,left 0.2s;
+transition-delay: 0.5s;
 `;
 
 const LeftCenterPoint = styled.div`
 position:absolute;
-top:235px;
+top:136px;
 left:330px;
 height: 1px;
 width: 1px;
@@ -65,7 +68,7 @@ width: 1px;
 
 const RightCenterPoint = styled.div`
 position:absolute;
-top:242px;
+top:142px;
 left:254px;
 height: 1px;
 width: 1px;
@@ -84,9 +87,9 @@ const Body = ({ mouse }) => {
   return (
     <StyledBody posFromTop={0} >
       <CiaranImageContainer>
-        <img alt={'ciaran with following eyes'} src={CiaranNoEyesImage} style={{ zIndex: 1, height: 1000, objectFit: "contain", position: 'absolute' }} />
+        <img alt={'ciaran with following eyes'} src={CiaranNoEyesImage} style={{ zIndex: 1, height: 1000, bottom: 0, objectFit: "contain", position: 'absolute' }} />
         <CiaranCutoutChildren>
-          <img alt={'my sclera'} src={EyeWhites} style={{ zIndex: -1, top: 135, left: 228, height: 210, width: 130, objectFit: "contain", position: 'absolute' }} />
+          <img alt={'my sclera'} src={EyeWhites} style={{ zIndex: -1, top: 37, left: 228, height: 210, width: 130, objectFit: "contain", position: 'absolute' }} />
           <LeftEye alt={'my left cornea'} src={LeftEyeImage} position={leftPupilPos} />
           <RightEye alt={'my right cornea'} src={RightEyeImage} position={rightPupilPos} />
           <LeftCenterPoint ref={leftCenter} />
